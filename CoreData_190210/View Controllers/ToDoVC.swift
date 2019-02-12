@@ -64,7 +64,7 @@ class ToDoVC: UITableViewController {
     }
     
     func loadIt() {
-        
+        print("here is my load function")
         do {
             myList = try myContext.fetch(myFetching)
         }
