@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.78" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Detail" representedClassName=".Detail" syncable="YES" codeGenerationType="class">
+        <attribute name="detailName" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToDoList" inverseName="child" inverseEntity="ToDoList" syncable="YES"/>
+    </entity>
+    <entity name="ToDoList" representedClassName=".ToDoList" syncable="YES" codeGenerationType="class">
+        <attribute name="elements" attributeType="String" syncable="YES"/>
+        <relationship name="child" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detail" inverseName="parent" inverseEntity="Detail" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ToDoList" positionX="-2492.3046875" positionY="-658.0078125" width="128" height="73"/>
+        <element name="Detail" positionX="-2239.890625" positionY="-597.125" width="128" height="73"/>
+    </elements>
 </model>
