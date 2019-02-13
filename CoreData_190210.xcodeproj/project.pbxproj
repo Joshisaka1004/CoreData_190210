@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B2ED5D92214829400E96E8E /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2ED5D82214829400E96E8E /* MyData.swift */; };
 		3BDE72CF2210D73E00BA2C99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE72CE2210D73E00BA2C99 /* AppDelegate.swift */; };
 		3BDE72D12210D73E00BA2C99 /* ToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE72D02210D73E00BA2C99 /* ToDoVC.swift */; };
 		3BDE72D42210D73E00BA2C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE72D22210D73E00BA2C99 /* Main.storyboard */; };
@@ -15,12 +14,12 @@
 		3BDE72D92210D73F00BA2C99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE72D82210D73F00BA2C99 /* Assets.xcassets */; };
 		3BDE72DC2210D73F00BA2C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE72DA2210D73F00BA2C99 /* LaunchScreen.storyboard */; };
 		3BDE72E42210D7C400BA2C99 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE72E32210D7C400BA2C99 /* DetailVC.swift */; };
+		3BE7B97B2214CE99002B2BDB /* MyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE7B97A2214CE99002B2BDB /* MyDataModel.swift */; };
 		8B7407BD0EF2D57E50AF9358 /* Pods_CoreData_190210.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04903F8F2D3416E07E2B48A8 /* Pods_CoreData_190210.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04903F8F2D3416E07E2B48A8 /* Pods_CoreData_190210.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreData_190210.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B2ED5D82214829400E96E8E /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 		3BDE72CB2210D73E00BA2C99 /* CoreData_190210.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_190210.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDE72CE2210D73E00BA2C99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDE72D02210D73E00BA2C99 /* ToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoVC.swift; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		3BDE72DB2210D73F00BA2C99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BDE72DD2210D73F00BA2C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BDE72E32210D7C400BA2C99 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		3BE7B97A2214CE99002B2BDB /* MyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataModel.swift; sourceTree = "<group>"; };
 		BDB0833B94FB39FF1670211B /* Pods-CoreData_190210.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreData_190210.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreData_190210/Pods-CoreData_190210.debug.xcconfig"; sourceTree = "<group>"; };
 		C5FBE9399323BE5FB7B27D26 /* Pods-CoreData_190210.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreData_190210.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreData_190210/Pods-CoreData_190210.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +58,7 @@
 		3B2ED5DA2214829C00E96E8E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				3B2ED5D82214829400E96E8E /* MyData.swift */,
+				3BE7B97A2214CE99002B2BDB /* MyDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				3BDE72D12210D73E00BA2C99 /* ToDoVC.swift in Sources */,
 				3BDE72E42210D7C400BA2C99 /* DetailVC.swift in Sources */,
 				3BDE72D72210D73E00BA2C99 /* CoreData_190210.xcdatamodeld in Sources */,
-				3B2ED5D92214829400E96E8E /* MyData.swift in Sources */,
+				3BE7B97B2214CE99002B2BDB /* MyDataModel.swift in Sources */,
 				3BDE72CF2210D73E00BA2C99 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
