@@ -11,10 +11,11 @@ import CoreData
 
 class DetailVC: UITableViewController {
 
+    @IBOutlet weak var mySearchBar: UISearchBar!
     
     var myDetailList = [Detail]()
     
-    let myFetching = NSFetchRequest<Detail>(entityName: "Detail")
+    var myFetching = NSFetchRequest<Detail>(entityName: "Detail")
     
     var myContext2 = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -26,7 +27,7 @@ class DetailVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mySearchBar.delegate = self
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,12 +59,19 @@ class DetailVC: UITableViewController {
         present(myAlert, animated: true, completion: nil)
     }
     
-    func loadIt() {
-        let myPredicate = NSPredicate(format: "parent.elements MATCHES %@", selectedCategory!.elements!)
-        myFetching.predicate = myPredicate
+    func loadIt(myFetchingRequest: NSFetchRequest<Detail> = Detail.fetchRequest(), myPredicate2: NSPredicate? = nil) {
+        
+        let myPredicate1 = NSPredicate(format: "parent.elements MATCHES %@", selectedCategory!.elements!)
+        
+        if let additionalPredicate = myPredicate2 {
+            let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [myPredicate1, additionalPredicate])
+            myFetchingRequest.predicate = compound
+        } else {
+            myFetchingRequest.predicate = myPredicate1
+        }
     
         do {
-            myDetailList = try myContext2.fetch(myFetching)
+            myDetailList = try myContext2.fetch(myFetchingRequest)
         }
         catch {
             print("This error is of kind \(error)")
@@ -81,4 +89,18 @@ class DetailVC: UITableViewController {
         }
         tableView.reloadData()
     }
+}
+
+extension DetailVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let containPredicate = NSPredicate(format: "detailName CONTAINS [cd] %@", mySearchBar.text!)
+        if searchBar.text == "" {
+            loadIt(myFetchingRequest: myFetching)
+        } else {
+           loadIt(myPredicate2: containPredicate)
+        }
+        
+    }
+    
 }

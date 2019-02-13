@@ -11,14 +11,17 @@ import CoreData
 
 class ToDoVC: UITableViewController {
 
+    @IBOutlet weak var mySearchBar: UISearchBar!
+    
     var myList = [ToDoList]()
     
     let myContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let myFetching = NSFetchRequest<ToDoList>(entityName: "ToDoList")
+    var myFetching = NSFetchRequest<ToDoList>(entityName: "ToDoList")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mySearchBar.delegate = self
         loadIt()
     }
 
@@ -65,12 +68,14 @@ class ToDoVC: UITableViewController {
     
     func loadIt() {
         print("here is my load function")
+        
         do {
             myList = try myContext.fetch(myFetching)
         }
         catch {
             print("This error is of kind \(error)")
         }
+        tableView.reloadData()
     }
     
     func saveIt() {
@@ -81,6 +86,19 @@ class ToDoVC: UITableViewController {
         catch {
             print("This error is of kind \(error)")
         }
+        tableView.reloadData()
     }
 }
 
+extension ToDoVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        myFetching.predicate = NSPredicate(format: "elements CONTAINS [cd] %@", mySearchBar.text!)
+        myFetching.sortDescriptors = [NSSortDescriptor(key: "elements", ascending: true)]
+        if searchBar.text == "" {
+            myFetching = NSFetchRequest<ToDoList>(entityName: "ToDoList")
+        }
+        loadIt()
+    }
+    
+}

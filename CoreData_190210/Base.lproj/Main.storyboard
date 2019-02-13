@@ -9,20 +9,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--To DoVC-->
+        <!--To Do List-->
         <scene sceneID="gqY-ee-a38">
             <objects>
                 <tableViewController id="702-MP-jk1" customClass="ToDoVC" customModule="CoreData_190210" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y0W-Qp-MXt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y0W-Qp-MXt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="t5D-lJ-u1V">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="I9b-CZ-QBG">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="I9b-CZ-QBG">
+                                <rect key="frame" x="0.0" y="72" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I9b-CZ-QBG" id="JPH-eW-L3N">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -32,7 +37,7 @@
                             <outlet property="delegate" destination="702-MP-jk1" id="KhY-BC-ii7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="H1P-wy-TND">
+                    <navigationItem key="navigationItem" title="To Do List" id="H1P-wy-TND">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Ve-bM-CYg">
                             <connections>
                                 <action selector="addButton:" destination="702-MP-jk1" id="BKc-gM-pvU"/>
@@ -40,6 +45,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mySearchBar" destination="t5D-lJ-u1V" id="pu7-Hg-8xx"/>
                         <segue destination="Rc5-6D-MhO" kind="show" identifier="goToDetailVC" id="dNc-AZ-w3T"/>
                     </connections>
                 </tableViewController>
@@ -47,20 +53,25 @@
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="97.767857142857139"/>
         </scene>
-        <!--Title-->
+        <!--???-->
         <scene sceneID="Amv-ea-kWF">
             <objects>
                 <tableViewController id="Rc5-6D-MhO" customClass="DetailVC" customModule="CoreData_190210" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fAg-9j-tXq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="fAg-9j-tXq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="UE9-k9-xGd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="lFK-pF-W8B">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="lFK-pF-W8B">
+                                <rect key="frame" x="0.0" y="72" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lFK-pF-W8B" id="GvK-3c-e7X">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -70,13 +81,16 @@
                             <outlet property="delegate" destination="Rc5-6D-MhO" id="2vC-op-vU0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="PXk-a7-QXc">
+                    <navigationItem key="navigationItem" title="???" id="PXk-a7-QXc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zgy-PA-qLx">
                             <connections>
                                 <action selector="addButton:" destination="Rc5-6D-MhO" id="eNt-VC-gGV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mySearchBar" destination="UE9-k9-xGd" id="UuW-ig-ehT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nb6-JM-F1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,9 +101,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MEF-d5-Itn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RgT-Ye-0Ko">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="RgT-Ye-0Ko">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.85950545619999996" blue="0.67509058919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
