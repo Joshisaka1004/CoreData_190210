@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let myDataObj = MyData()
+        let myDataObj = MyDataModel()
         myDataObj.myAge = 52
-        myDataObj.myName = "Jochen"
+        myDataObj.herName = "Jasmina"
         
         do {
             let myRealmObj = try Realm()
