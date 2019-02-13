@@ -19,6 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let myDataObj = MyData()
+        myDataObj.myAge = 52
+        myDataObj.myName = "Jochen"
+        
+        do {
+            let myRealmObj = try Realm()
+            try myRealmObj.write {
+                myRealmObj.add(myDataObj)
+            }
+        }
+        catch {
+            print("This error is of kind \(error)")
+        }
+        
+        
+        
         let myPath = Realm.Configuration.defaultConfiguration.fileURL!
         print(myPath)
         
