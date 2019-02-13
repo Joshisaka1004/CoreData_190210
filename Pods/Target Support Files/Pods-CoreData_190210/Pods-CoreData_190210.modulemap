@@ -1,0 +1,6 @@
+framework module Pods_CoreData_190210 {
+  umbrella header "Pods-CoreData_190210-umbrella.h"
+
+  export *
+  module * { export * }
+}
